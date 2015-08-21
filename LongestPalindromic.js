@@ -83,3 +83,27 @@ function fondLongestPalindromic1(str) {
     }
     return longest;
 }
+
+/**
+*判断一个字符串是否是回文字符串
+**/
+function validPalindrome(str) {
+    var i = 0;
+    var j = str.length - 1;
+    while (i < j) {
+        while (/[^0-9a-zA-z]/.test(str[i])) {
+            i++;
+        }
+        while (/[^0-9a-zA-Z]/.test(str[j])) {
+            j--;
+        }
+        if (str[i].toLowerCase() !== str[j].toLowerCase()) {
+            return false;
+        }
+        else {
+            i++;
+            j--;
+        }
+    }
+    return true;
+}
